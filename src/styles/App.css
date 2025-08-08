@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: rgb(140, 226, 255);
+  padding: 2em;
+}
+
+.card {
+  padding: 2em;
+}
+
