@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
+import {
+    Routes,
+    Route,
+    Link,
+    useNavigate,
+    Outlet,
+} from "react-router-dom";
 import ProjectListItem from './ProjectListItem';
+import ProjectPage from './ProjectPage';
 
 function ProjectList({projects}) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,9 +26,15 @@ function ProjectList({projects}) {
       </div>
       <ul className="Projects divide-y divide-gray-100">
         {filteredProjects.map(project => (
-            <ProjectListItem key={uuid()} project={project} />
+            <Link key={uuid()} to={`/${project.name.replace(' ', '-')}`}>
+            <ProjectListItem project={project} />
+        </Link>
         ))}
       </ul>
+      <Routes>
+        <Route path="/"></Route>
+        <Route path="/:name" element={<ProjectPage />} />
+      </Routes>
     </div>
   )
 }
