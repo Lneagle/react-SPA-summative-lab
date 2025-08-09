@@ -3,14 +3,40 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
+  --aux-bg-color: rgb(223, 242, 255);
+  --main-border-color: #444;
 }
 
 header {
-  background-color: rgb(140, 226, 255);
+  background-color: var(--aux-bg-color);
   padding: 2em;
+  border-bottom: 1px solid var(--main-border-color);
+  margin-bottom: 2em;
 }
 
-.card {
-  padding: 2em;
+header h1 {
+  font-size: 2.2em;
+  line-height: 1.1;
+  text-align: center;
 }
 
+form {
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.5em;
+  margin: 1.5em;
+  padding: 1em;
+  background-color: var(--aux-bg-color);
+}
+
+.ProjectList {
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.5em;
+  margin: 1.5em;
+}
+
+.SearchBar {
+  background-color: var(--aux-bg-color);
+  border-bottom: 1px solid var(--main-border-color);
+  border-radius: 0.5em 0.5em 0 0;
+  padding: 0.5em;
+}
